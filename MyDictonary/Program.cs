@@ -32,6 +32,26 @@ class MyDictionary<TKey, TValue>
         //Anahtar ve değer dizilerini güncelle
         keys = tempKeys;
         values = tempValues;
+        count++
     }
 }
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Programın başlangıç noktası
+        // MyDictionary sınıfını kullanarak örnek oluştur
+        MyDictionary<int, string> myDictionary = new MyDictionary<int, string>();
 
+        // Örnek veri ekleyelim
+        myDictionary.Add(1, "Bir");
+        myDictionary.Add(2, "İki");
+        myDictionary.Add(3, "Üç");
+
+        // Eklenen verileri ekrana yazdıralım
+        for (int i = 0; i < myDictionary.count; i++)
+        {
+            Console.WriteLine("Anahtar: " + myDictionary.keys[i] + ", Değer: " + myDictionary.values[i]);
+        }
+    }
+}
